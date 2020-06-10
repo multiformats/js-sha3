@@ -1,10 +1,13 @@
 {
   "name": "@multiformats/sha3",
   "version": "0.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pre:test": "standard",
+    "test:node": "hundreds mocha test.js",
+    "test:browser": "polendina --cleanup test.js",
+    "test": "npm run pre:test && npm run test:node && npm run test:browser",
+    "coverage": "nyc --reporter=html mocha test.js && npx st -d coverage -p 8080"
   },
   "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
@@ -13,8 +16,19 @@
     "js-sha3": "^0.8.0"
   },
   "devDependencies": {
+    "hundreds": "0.0.2",
     "mocha": "^7.2.0",
+    "multiformats": "0.0.9",
     "polendina": "^1.0.0",
     "standard": "^14.3.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeal/js-sha3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikeal/js-sha3/issues"
+  },
+  "homepage": "https://github.com/mikeal/js-sha3#readme",
+  "description": "Multiformats hash functions for SHA3"
 }
