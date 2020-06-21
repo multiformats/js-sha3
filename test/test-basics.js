@@ -1,12 +1,13 @@
 /* globals describe, it */
-const main = require('./')
+import main from '../index.js'
+import assert from 'assert'
+
+import { create } from 'multiformats'
+
 const test = it
-const assert = require('assert')
 const same = assert.deepStrictEqual
 
-const multiformats = require('multiformats')
-const { bytes } = multiformats
-const { multihash } = multiformats()
+const { multihash, bytes } = create()
 multihash.add(main)
 
 const fixture = bytes.fromString('testFixture')
