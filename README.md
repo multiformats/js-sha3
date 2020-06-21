@@ -3,8 +3,10 @@
 Multiformats hash functions for SHA3.
 
 ```js
-const { multihash } = require('multiformats')()
-const sha3 = require('@multiformats/sha3')
+import multiformats from 'multiformats/basics.js'
+import sha3 from '@multiformats/sha3'
+
+const { multihash } = multiformats
 multihash.add(sha3)
 
 const data = new Uint8Array([...someData])
