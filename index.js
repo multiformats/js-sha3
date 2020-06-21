@@ -1,9 +1,8 @@
 'use strict'
-
-const sha3 = require('js-sha3')
+import sha3 from 'js-sha3'
 const encoder = fn => b => new Uint8Array(fn.array(b))
 
-module.exports = [
+export default [
   { code: 0x14, name: 'sha3-512', encode: encoder(sha3.sha3_512) },
   { code: 0x15, name: 'sha3-384', encode: encoder(sha3.sha3_384) },
   { code: 0x16, name: 'sha3-256', encode: encoder(sha3.sha3_256) },

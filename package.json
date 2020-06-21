@@ -2,12 +2,20 @@
   "name": "@multiformats/sha3",
   "version": "0.0.0-dev",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "pre:test": "standard",
-    "test:node": "hundreds mocha test.js",
-    "test:browser": "polendina --cleanup test.js",
-    "test": "npm run pre:test && npm run test:node && npm run test:browser",
-    "coverage": "nyc --reporter=html mocha test.js && npx st -d coverage -p 8080"
+    "build": "rollup --config rollup.config.js",
+    "prepublishOnly": "npm run build",
+    "lint": "standard",
+    "test:cjs": "npm run build && mocha dist/test/test-*.cjs",
+    "test:node": "hundreds mocha test/test-*.js",
+    "test:browser": "polendina --cleanup test/test-*.js",
+    "test": "npm run lint && npm run test:node && npm run test:browser && npm run test:cjs",
+    "coverage": "c8 --reporter=html mocha test/test-*.js && npx st -d coverage -p 8080"
+  },
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./index.js"
   },
   "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
@@ -16,10 +24,12 @@
     "js-sha3": "^0.8.0"
   },
   "devDependencies": {
-    "hundreds": "0.0.2",
+    "globby": "^11.0.1",
+    "hundreds": "0.0.7",
     "mocha": "^8.0.1",
-    "multiformats": "1.0.0",
+    "multiformats": "1.1.6",
     "polendina": "^1.0.0",
+    "rollup": "^2.17.1",
     "standard": "^14.3.4"
   },
   "repository": {
