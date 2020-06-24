@@ -1,36 +1,41 @@
-import globby from 'globby'
-import path from 'path'
+import { readdirSync, readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 
-let configs = [{
-  input: 'index.js',
-  output: {
-    file: 'dist/index.cjs',
-    format: 'cjs'
-  }
-}]
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const pkg = JSON.parse(readFileSync(join(__dirname, 'package.json')))
 
 const relativeToMain = name => ({
   name: 'relative-to-main',
   renderChunk: source => {
-    while (source.includes("require('../index.js')")) {
-      source = source.replace("require('../index.js')", `require('${name}')`)
+    const lines = source.split('\n')
+    source = ''
+    for (let line of lines) {
+      if (line.includes("require('../index.cjs')")) {
+        line = line.replace("require('../index.cjs')", `require('${name}')`)
+      }
+      if (line.includes("require('../")) {
+        line = line.replace("require('../", `require('${name}/`)
+        line = line.replace('.cjs', '.js')
+      }
+      source += line + '\n'
     }
     return source
   }
 })
 
-const plugins = [relativeToMain('@multiformats/sha3')]
-const add = (pattern) => {
-  configs = configs.concat(globby.sync(pattern).map(inputFile => ({
-    input: inputFile,
-    output: {
-      plugins,
-      file: path.join('dist', inputFile).replace('.js', '.cjs'),
-      format: 'cjs'
-    }
-  })))
-}
-add('test/*.js')
+const plugins = [relativeToMain(pkg.name)]
+const dir = 'dist'
+const preserveModules = true
+const output = { dir, plugins, format: 'cjs', entryFileNames: '[name].cjs' }
+const testdir = join(__dirname, 'test')
+const filter = name => name.startsWith('test-')
+const createConfig = f => ({ input: join('test', f), output })
+
+const configs = readdirSync(testdir).filter(filter).map(createConfig)
+
 console.log(configs)
 
 export default configs
