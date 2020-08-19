@@ -1,5 +1,5 @@
 /* globals describe, it */
-import main from '../index.js'
+import main from '@multiformats/sha3'
 import assert from 'assert'
 
 import { create } from 'multiformats'
