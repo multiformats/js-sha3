@@ -3,7 +3,7 @@
 Multiformats hash functions for SHA3.
 
 ```js
-import multiformats from 'multiformats/basics.js'
+import multiformats from 'multiformats/basics'
 import sha3 from '@multiformats/sha3'
 
 const { multihash } = multiformats
