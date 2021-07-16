@@ -1,3 +1,19 @@
+## [2.0.0](https://github.com/mikeal/js-sha3/compare/v1.1.1...v2.0.0) (2021-07-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* add types, update deps, semantic-release, dependabot
+
+### Features
+
+* add types, update deps, semantic-release, dependabot ([d794400](https://github.com/mikeal/js-sha3/commit/d794400bf8f4d7f2096815ede9315ee311606012))
+
+
+### Trivial Changes
+
+* add example, fix up README ([6948f58](https://github.com/mikeal/js-sha3/commit/6948f5868647fe370cc25e4955b68bcd632f9e55))
+
 ## [1.1.0](https://github.com/mikeal/js-sha3/compare/v1.0.4...v1.1.0) (2021-07-16)
 
 
