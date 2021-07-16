@@ -1,47 +1,32 @@
 {
   "name": "@multiformats/sha3",
   "version": "0.0.0-dev",
-  "description": "Multiformats hash functions for SHA3",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run build:js && npm run build:types",
-    "build:js": "ipjs build --tests --main && npm run build:copy",
-    "build:copy": "cp -a tsconfig.json *.js dist/",
-    "build:types": "npm run build:copy && cd dist && tsc --build",
-    "publish": "ipjs publish",
+    "build": "npm_config_yes=true npx ipjs@latest build --tests",
+    "publish": "npm_config_yes=true npx ipjs@latest publish",
     "lint": "standard",
-    "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js && npm run test:cjs:browser",
-    "test:node": "c8 --check-coverage --branches 100 --functions 100 --lines 100 mocha test/test-*.js",
-    "test:cjs:browser": "polendina --cleanup dist/cjs/browser-test/test-*.js",
-    "test": "npm run lint && npm run test:node && npm run test:cjs",
-    "coverage": "c8 --reporter=html mocha test/test-*.js && npm_config_yes=true npx st -d coverage -p 8080"
+    "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js",
+    "test:node": "hundreds mocha test/test-*.js",
+    "test:browser": "polendina --cleanup dist/cjs/browser-test/test-*.js",
+    "test": "npm run lint && npm run test:node && npm run test:cjs && npm run test:browser",
+    "coverage": "c8 --reporter=html mocha test/test-*.js && npx st -d coverage -p 8080"
   },
   "exports": {
     "import": "./index.js"
   },
-  "keywords": [
-    "IPFS",
-    "IPLD",
-    "multiformats",
-    "hash",
-    "multihash",
-    "blake2"
-  ],
+  "keywords": [],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
   "license": "(Apache-2.0 AND MIT)",
   "dependencies": {
-    "js-sha3": "^0.8.0",
-    "multiformats": "^9.4.1"
+    "js-sha3": "^0.8.0"
   },
   "devDependencies": {
-    "c8": "^7.7.3",
-    "chai": "^4.3.4",
-    "ipjs": "^5.0.2",
-    "mocha": "^9.0.2",
+    "hundreds": "0.0.8",
+    "mocha": "^8.1.1",
+    "multiformats": "3.0.3",
     "polendina": "^1.1.0",
-    "standard": "^16.0.3",
-    "typescript": "^4.3.5"
+    "standard": "^14.3.4"
   },
   "repository": {
     "type": "git",
@@ -51,100 +36,5 @@
     "url": "https://github.com/mikeal/js-sha3/issues"
   },
   "homepage": "https://github.com/mikeal/js-sha3#readme",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "types/*"
-      ],
-      "types/*": [
-        "types/*"
-      ]
-    }
-  },
-  "release": {
-    "branches": [
-      "master"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "preset": "conventionalcommits",
-          "releaseRules": [
-            {
-              "breaking": true,
-              "release": "major"
-            },
-            {
-              "revert": true,
-              "release": "patch"
-            },
-            {
-              "type": "feat",
-              "release": "minor"
-            },
-            {
-              "type": "fix",
-              "release": "patch"
-            },
-            {
-              "type": "chore",
-              "release": "patch"
-            },
-            {
-              "type": "docs",
-              "release": "patch"
-            },
-            {
-              "type": "test",
-              "release": "patch"
-            },
-            {
-              "scope": "no-release",
-              "release": false
-            }
-          ]
-        }
-      ],
-      [
-        "@semantic-release/release-notes-generator",
-        {
-          "preset": "conventionalcommits",
-          "presetConfig": {
-            "types": [
-              {
-                "type": "feat",
-                "section": "Features"
-              },
-              {
-                "type": "fix",
-                "section": "Bug Fixes"
-              },
-              {
-                "type": "chore",
-                "section": "Trivial Changes"
-              },
-              {
-                "type": "docs",
-                "section": "Trivial Changes"
-              },
-              {
-                "type": "test",
-                "section": "Tests"
-              }
-            ]
-          }
-        }
-      ],
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "dist"
-        }
-      ],
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ]
-  }
+  "description": "Multiformats hash functions for SHA3"
 }
