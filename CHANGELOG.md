@@ -1,3 +1,10 @@
+### [2.0.2](https://github.com/mikeal/js-sha3/compare/v2.0.1...v2.0.2) (2021-09-28)
+
+
+### Trivial Changes
+
+* **deps:** bump actions/setup-node from 2.4.0 to 2.4.1 ([38c28bd](https://github.com/mikeal/js-sha3/commit/38c28bd298eff3f594e11dde3dd76c5b3a369cca))
+
 ### [2.0.1](https://github.com/mikeal/js-sha3/compare/v2.0.0...v2.0.1) (2021-08-06)
 
 
