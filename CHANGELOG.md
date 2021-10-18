@@ -1,3 +1,10 @@
+### [2.0.3](https://github.com/mikeal/js-sha3/compare/v2.0.2...v2.0.3) (2021-10-18)
+
+
+### Trivial Changes
+
+* **deps:** bump actions/checkout from 2.3.4 to 2.3.5 ([6d5528a](https://github.com/mikeal/js-sha3/commit/6d5528a3ea7321b51ca53d6bcac82ce624b81499))
+
 ### [2.0.2](https://github.com/mikeal/js-sha3/compare/v2.0.1...v2.0.2) (2021-09-28)
 
 
