@@ -1,3 +1,11 @@
+### [2.0.5](https://github.com/mikeal/js-sha3/compare/v2.0.4...v2.0.5) (2021-12-08)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump polendina from 1.1.1 to 2.0.0 ([#12](https://github.com/mikeal/js-sha3/issues/12)) ([b9ef7c4](https://github.com/mikeal/js-sha3/commit/b9ef7c460c8c3edc302be859f8b2464cba7a3b48))
+* **no-release:** bump actions/setup-node from 2.4.1 to 2.5.0 ([#11](https://github.com/mikeal/js-sha3/issues/11)) ([f1d9ac6](https://github.com/mikeal/js-sha3/commit/f1d9ac6c5fbe1cf5f4a4b76b7d821895d080bed4))
+
 ### [2.0.4](https://github.com/mikeal/js-sha3/compare/v2.0.3...v2.0.4) (2021-11-04)
 
 
