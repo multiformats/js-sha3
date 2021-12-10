@@ -5,24 +5,23 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "lint": "standard",
     "build": "npm run build:js && npm run build:types",
     "build:js": "ipjs build --tests --main && npm run build:copy",
-    "build:copy": "cp -a tsconfig.json *.js dist/",
-    "build:types": "npm run build:copy && cd dist && tsc --build",
-    "publish": "ipjs publish",
-    "lint": "standard",
+    "build:copy": "cp -a tsconfig.json *.js test dist/",
+    "build:types": "tsc --build && mv types dist",
     "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js && npm run test:cjs:browser",
+    "test:esm": "npm run build && mocha dist/esm/node-test/test-*.js && npm run test:esm:browser",
     "test:node": "c8 --check-coverage --branches 100 --functions 100 --lines 100 mocha test/test-*.js",
     "test:cjs:browser": "polendina --cleanup dist/cjs/browser-test/test-*.js",
-    "test": "npm run lint && npm run test:node && npm run test:cjs",
+    "test:esm:browser": "polendina --cleanup dist/esm/browser-test/test-*.js",
+    "test": "npm run lint && npm run test:node && npm run test:esm",
+    "test:ci": "npm run lint && npm run test:node && npm run test:esm && npm run test:cjs",
     "coverage": "c8 --reporter=html mocha test/test-*.js && npm_config_yes=true npx st -d coverage -p 8080"
   },
-  "exports": {
-    "import": "./index.js"
-  },
   "keywords": [
-    "IPFS",
-    "IPLD",
+    "ipfs",
+    "ipld",
     "multiformats",
     "hash",
     "multihash",
@@ -30,28 +29,39 @@
   ],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
   "license": "(Apache-2.0 AND MIT)",
+  "exports": {
+    "import": "./index.js"
+  },
   "dependencies": {
     "js-sha3": "^0.8.0",
-    "multiformats": "^9.4.1"
+    "multiformats": "^9.5.4"
   },
   "devDependencies": {
-    "@ipld/dag-cbor": "^6.0.5",
-    "c8": "^7.7.3",
+    "@ipld/dag-cbor": "^6.0.15",
+    "c8": "^7.10.0",
     "chai": "^4.3.4",
-    "ipjs": "^5.0.2",
-    "mocha": "^9.0.2",
-    "polendina": "^2.0.0",
-    "standard": "^16.0.3",
-    "typescript": "^4.3.5"
+    "ipjs": "^5.2.0",
+    "mocha": "^9.1.3",
+    "polendina": "~2.0.1",
+    "standard": "^16.0.4",
+    "typescript": "~4.5.3"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "directories": {
+    "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikeal/js-sha3.git"
+    "url": "git+https://github.com/multiformats/js-sha3.git"
   },
   "bugs": {
-    "url": "https://github.com/mikeal/js-sha3/issues"
+    "url": "https://github.com/multiformats/js-sha3/issues"
   },
-  "homepage": "https://github.com/mikeal/js-sha3#readme",
+  "homepage": "https://github.com/multiformats/js-sha3#readme",
   "typesVersions": {
     "*": {
       "*": [
