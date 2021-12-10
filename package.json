@@ -8,8 +8,8 @@
     "lint": "standard",
     "build": "npm run build:js && npm run build:types",
     "build:js": "ipjs build --tests --main && npm run build:copy",
-    "build:copy": "cp -a tsconfig.json *.js dist/",
-    "build:types": "npm run build:copy && cd dist && tsc --build",
+    "build:copy": "cp -a tsconfig.json *.js test dist/",
+    "build:types": "tsc --build && mv types dist",
     "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js && npm run test:cjs:browser",
     "test:esm": "npm run build && mocha dist/esm/node-test/test-*.js && npm run test:esm:browser",
     "test:node": "c8 --check-coverage --branches 100 --functions 100 --lines 100 mocha test/test-*.js",
@@ -45,6 +45,14 @@
     "polendina": "~2.0.1",
     "standard": "^16.0.4",
     "typescript": "~4.5.3"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "directories": {
+    "test": "test"
   },
   "repository": {
     "type": "git",
