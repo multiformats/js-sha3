@@ -13,8 +13,8 @@
     "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js && npm run test:cjs:browser",
     "test:esm": "npm run build && mocha dist/esm/node-test/test-*.js && npm run test:esm:browser",
     "test:node": "c8 --check-coverage --branches 100 --functions 100 --lines 100 mocha test/test-*.js",
-    "test:cjs:browser": "polendina --cleanup dist/cjs/browser-test/test-*.js",
-    "test:esm:browser": "polendina --cleanup dist/esm/browser-test/test-*.js",
+    "test:cjs:browser": "polendina --page --worker --serviceworker --cleanup dist/cjs/browser-test/test-*.js",
+    "test:esm:browser": "polendina --page --worker --serviceworker --cleanup dist/esm/browser-test/test-*.js",
     "test": "npm run lint && npm run test:node && npm run test:esm",
     "test:ci": "npm run lint && npm run test:node && npm run test:esm && npm run test:cjs",
     "coverage": "c8 --reporter=html mocha test/test-*.js && npm_config_yes=true npx st -d coverage -p 8080"
