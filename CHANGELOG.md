@@ -1,3 +1,10 @@
+### [2.0.6](https://github.com/multiformats/js-sha3/compare/v2.0.5...v2.0.6) (2021-12-10)
+
+
+### Trivial Changes
+
+* update testing, sync with latest patterns ([#13](https://github.com/multiformats/js-sha3/issues/13)) ([e90edf2](https://github.com/multiformats/js-sha3/commit/e90edf2c8e0677cf7020b16a5cf02f8e60beac33))
+
 ### [2.0.5](https://github.com/mikeal/js-sha3/compare/v2.0.4...v2.0.5) (2021-12-08)
 
 
