@@ -1,3 +1,10 @@
+### [2.0.7](https://github.com/multiformats/js-sha3/compare/v2.0.6...v2.0.7) (2021-12-10)
+
+
+### Bug Fixes
+
+* test all environments w/ polendina ([a582c64](https://github.com/multiformats/js-sha3/commit/a582c6494cdf6632ecdee2b76a4af2f03f0b0868))
+
 ### [2.0.6](https://github.com/multiformats/js-sha3/compare/v2.0.5...v2.0.6) (2021-12-10)
 
 
