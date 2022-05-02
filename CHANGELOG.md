@@ -1,3 +1,14 @@
+### [2.0.9](https://github.com/multiformats/js-sha3/compare/v2.0.8...v2.0.9) (2022-05-02)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump polendina from 2.0.15 to 3.0.0 ([25a89ab](https://github.com/multiformats/js-sha3/commit/25a89ab9c28a7aa3dc2983b5d08e8b5a751f107c))
+* **no-release:** bump actions/checkout from 2.4.0 to 3 ([#20](https://github.com/multiformats/js-sha3/issues/20)) ([6c8cf97](https://github.com/multiformats/js-sha3/commit/6c8cf970c737f3de3cc91381e58459be2959e1b5))
+* **no-release:** bump actions/setup-node from 3.0.0 to 3.1.0 ([#21](https://github.com/multiformats/js-sha3/issues/21)) ([fd96767](https://github.com/multiformats/js-sha3/commit/fd967671ad95ee364320fbcb837ac1277159e9df))
+* **no-release:** bump actions/setup-node from 3.1.0 to 3.1.1 ([#22](https://github.com/multiformats/js-sha3/issues/22)) ([7d79542](https://github.com/multiformats/js-sha3/commit/7d795424c3b76b55a28ca7dc0607ac6bc5ef90a1))
+* **no-release:** bump standard from 16.0.4 to 17.0.0 ([#23](https://github.com/multiformats/js-sha3/issues/23)) ([3ea7e92](https://github.com/multiformats/js-sha3/commit/3ea7e92f4b8d029433e277649d81ab3b2812b17a))
+
 ### [2.0.8](https://github.com/multiformats/js-sha3/compare/v2.0.7...v2.0.8) (2022-03-01)
 
 
