@@ -1,3 +1,10 @@
+### [2.0.10](https://github.com/multiformats/js-sha3/compare/v2.0.9...v2.0.10) (2022-05-02)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump mocha from 9.2.2 to 10.0.0 ([57f439e](https://github.com/multiformats/js-sha3/commit/57f439edf446c9e97bcbf992b99f487e3c99065d))
+
 ### [2.0.9](https://github.com/multiformats/js-sha3/compare/v2.0.8...v2.0.9) (2022-05-02)
 
 
