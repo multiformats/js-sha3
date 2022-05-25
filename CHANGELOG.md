@@ -1,3 +1,11 @@
+### [2.0.12](https://github.com/multiformats/js-sha3/compare/v2.0.11...v2.0.12) (2022-05-25)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump typescript from 4.6.4 to 4.7.2 ([#28](https://github.com/multiformats/js-sha3/issues/28)) ([5921a6d](https://github.com/multiformats/js-sha3/commit/5921a6d7fd9a15385724c408300bafde7f1e7676))
+* **no-release:** bump actions/setup-node from 3.1.1 to 3.2.0 ([#27](https://github.com/multiformats/js-sha3/issues/27)) ([1c4b680](https://github.com/multiformats/js-sha3/commit/1c4b68096a2899a602c5bd4bd7281a451241b0bc))
+
 ### [2.0.11](https://github.com/multiformats/js-sha3/compare/v2.0.10...v2.0.11) (2022-05-11)
 
 
