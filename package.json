@@ -37,7 +37,7 @@
     "multiformats": "^9.5.4"
   },
   "devDependencies": {
-    "@ipld/dag-cbor": "^7.0.0",
+    "@ipld/dag-cbor": "^8.0.1",
     "c8": "^7.10.0",
     "chai": "^4.3.4",
     "ipjs": "^5.2.0",
