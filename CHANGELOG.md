@@ -1,3 +1,10 @@
+## [2.0.15](https://github.com/multiformats/js-sha3/compare/v2.0.14...v2.0.15) (2023-01-06)
+
+
+### Trivial Changes
+
+* **deps:** bump actions/setup-node from 3.5.1 to 3.6.0 ([#45](https://github.com/multiformats/js-sha3/issues/45)) ([f7c7968](https://github.com/multiformats/js-sha3/commit/f7c79687378bd5ff525a95f63b4bbf6622f7b313))
+
 ## [2.0.14](https://github.com/multiformats/js-sha3/compare/v2.0.13...v2.0.14) (2022-12-08)
 
 
