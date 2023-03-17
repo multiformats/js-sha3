@@ -1,3 +1,16 @@
+## [2.0.16](https://github.com/multiformats/js-sha3/compare/v2.0.15...v2.0.16) (2023-03-17)
+
+
+### Bug Fixes
+
+* release with Node.js 18 ([05e0ee7](https://github.com/multiformats/js-sha3/commit/05e0ee726c1cfc4d26708e65c67ef97afe5ffe57))
+
+
+### Trivial Changes
+
+* **deps-dev:** bump @ipld/dag-cbor from 7.0.3 to 9.0.0 ([#46](https://github.com/multiformats/js-sha3/issues/46)) ([8a4ba7f](https://github.com/multiformats/js-sha3/commit/8a4ba7fd178d374ab16a8b8470c8f43094db9cb4))
+* **deps-dev:** bump typescript from 4.9.5 to 5.0.2 ([23d2c85](https://github.com/multiformats/js-sha3/commit/23d2c858772f1c5900ce31212b3c06bd68d16a48))
+
 ## [2.0.15](https://github.com/multiformats/js-sha3/compare/v2.0.14...v2.0.15) (2023-01-06)
 
 
