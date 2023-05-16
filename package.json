@@ -42,7 +42,7 @@
     "chai": "^4.3.4",
     "ipjs": "^5.2.0",
     "mocha": "^10.0.0",
-    "polendina": "~3.1.0",
+    "polendina": "~3.2.1",
     "standard": "^17.0.0",
     "typescript": "~5.0.2"
   },
