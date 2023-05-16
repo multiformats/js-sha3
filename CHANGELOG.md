@@ -1,3 +1,10 @@
+## [2.0.17](https://github.com/multiformats/js-sha3/compare/v2.0.16...v2.0.17) (2023-05-16)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump polendina from 3.1.0 to 3.2.1 ([77ed0fa](https://github.com/multiformats/js-sha3/commit/77ed0fa517768c5a71ad015495f339849b7c9f5a))
+
 ## [2.0.16](https://github.com/multiformats/js-sha3/compare/v2.0.15...v2.0.16) (2023-03-17)
 
 
