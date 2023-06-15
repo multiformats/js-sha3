@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "js-sha3": "^0.8.0",
-    "multiformats": "^9.5.4"
+    "multiformats": "^12.0.0"
   },
   "devDependencies": {
     "@ipld/dag-cbor": "^9.0.0",
