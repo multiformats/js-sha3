@@ -2,58 +2,9 @@
   "name": "@multiformats/sha3",
   "version": "0.0.0-dev",
   "description": "Multiformats hash functions for SHA3",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "lint": "standard",
-    "build": "npm run build:js && npm run build:types",
-    "build:js": "ipjs build --tests --main && npm run build:copy",
-    "build:copy": "cp -a tsconfig.json *.js test dist/",
-    "build:types": "tsc --build && mv types dist",
-    "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js && npm run test:cjs:browser",
-    "test:esm": "npm run build && mocha dist/esm/node-test/test-*.js && npm run test:esm:browser",
-    "test:node": "c8 --check-coverage --branches 100 --functions 100 --lines 100 mocha test/test-*.js",
-    "test:cjs:browser": "polendina --page --worker --serviceworker --cleanup dist/cjs/browser-test/test-*.js",
-    "test:esm:browser": "polendina --page --worker --serviceworker --cleanup dist/esm/browser-test/test-*.js",
-    "test": "npm run lint && npm run test:node && npm run test:esm",
-    "test:ci": "npm run lint && npm run test:node && npm run test:esm && npm run test:cjs",
-    "coverage": "c8 --reporter=html mocha test/test-*.js && npm_config_yes=true npx st -d coverage -p 8080"
-  },
-  "keywords": [
-    "ipfs",
-    "ipld",
-    "multiformats",
-    "hash",
-    "multihash",
-    "blake2"
-  ],
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
-  "license": "(Apache-2.0 AND MIT)",
-  "exports": {
-    "import": "./index.js"
-  },
-  "dependencies": {
-    "js-sha3": "^0.8.0",
-    "multiformats": "^9.5.4"
-  },
-  "devDependencies": {
-    "@ipld/dag-cbor": "^9.0.0",
-    "c8": "^7.10.0",
-    "chai": "^4.3.4",
-    "ipjs": "^5.2.0",
-    "mocha": "^10.0.0",
-    "polendina": "~3.2.1",
-    "standard": "^17.0.0",
-    "typescript": "~5.0.2"
-  },
-  "standard": {
-    "ignore": [
-      "dist"
-    ]
-  },
-  "directories": {
-    "test": "test"
-  },
+  "license": "Apache-2.0 OR MIT",
+  "homepage": "https://github.com/multiformats/js-sha3#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/multiformats/js-sha3.git"
@@ -61,101 +12,79 @@
   "bugs": {
     "url": "https://github.com/multiformats/js-sha3/issues"
   },
-  "homepage": "https://github.com/multiformats/js-sha3#readme",
+  "keywords": [
+    "blake2",
+    "hash",
+    "ipfs",
+    "ipld",
+    "multiformats",
+    "multihash"
+  ],
+  "type": "module",
+  "types": "./dist/src/index.d.ts",
   "typesVersions": {
     "*": {
       "*": [
-        "types/*"
+        "*",
+        "dist/*",
+        "dist/src/*",
+        "dist/src/*/index"
       ],
-      "types/*": [
-        "types/*"
+      "src/*": [
+        "*",
+        "dist/*",
+        "dist/src/*",
+        "dist/src/*/index"
       ]
     }
   },
-  "release": {
-    "branches": [
-      "master"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "preset": "conventionalcommits",
-          "releaseRules": [
-            {
-              "breaking": true,
-              "release": "major"
-            },
-            {
-              "revert": true,
-              "release": "patch"
-            },
-            {
-              "type": "feat",
-              "release": "minor"
-            },
-            {
-              "type": "fix",
-              "release": "patch"
-            },
-            {
-              "type": "chore",
-              "release": "patch"
-            },
-            {
-              "type": "docs",
-              "release": "patch"
-            },
-            {
-              "type": "test",
-              "release": "patch"
-            },
-            {
-              "scope": "no-release",
-              "release": false
-            }
-          ]
-        }
-      ],
-      [
-        "@semantic-release/release-notes-generator",
-        {
-          "preset": "conventionalcommits",
-          "presetConfig": {
-            "types": [
-              {
-                "type": "feat",
-                "section": "Features"
-              },
-              {
-                "type": "fix",
-                "section": "Bug Fixes"
-              },
-              {
-                "type": "chore",
-                "section": "Trivial Changes"
-              },
-              {
-                "type": "docs",
-                "section": "Trivial Changes"
-              },
-              {
-                "type": "test",
-                "section": "Tests"
-              }
-            ]
-          }
-        }
-      ],
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "dist"
-        }
-      ],
-      "@semantic-release/github",
-      "@semantic-release/git"
+  "files": [
+    "src",
+    "dist",
+    "!dist/test",
+    "!**/*.tsbuildinfo"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "eslintConfig": {
+    "extends": "ipfs",
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
+  "scripts": {
+    "clean": "aegir clean",
+    "lint": "aegir lint",
+    "build": "aegir build",
+    "release": "aegir release",
+    "test": "aegir test",
+    "test:ts": "npm run test --prefix test/ts-use",
+    "test:node": "aegir test -t node --cov",
+    "test:chrome": "aegir test -t browser --cov",
+    "test:chrome-webworker": "aegir test -t webworker",
+    "test:firefox": "aegir test -t browser -- --browser firefox",
+    "test:firefox-webworker": "aegir test -t webworker -- --browser firefox",
+    "test:electron-main": "aegir test -t electron-main",
+    "dep-check": "aegir dep-check"
+  },
+  "dependencies": {
+    "js-sha3": "^0.8.0",
+    "multiformats": "^12.0.1"
+  },
+  "devDependencies": {
+    "@ipld/dag-cbor": "^9.0.4",
+    "aegir": "^40.0.11"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
     ]
   }
 }

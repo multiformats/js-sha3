@@ -1,7 +1,5 @@
-'use strict'
-
-import { from } from 'multiformats/hashes/hasher'
 import sha3 from 'js-sha3'
+import { from } from 'multiformats/hashes/hasher'
 
 /**
  * @param {sha3.Hash} fn

@@ -1,11 +1,9 @@
 /* eslint-env mocha */
 
-import * as sha3 from '@multiformats/sha3'
-import chai from 'chai'
+import { assert } from 'aegir/chai'
 import { bytes } from 'multiformats'
+import * as sha3 from '../src/index.js'
 import table from './table.csv.js'
-
-const { assert } = chai
 
 const fixtures = [
   ['sha3-512', 'beep boop', '1440fae2c9eb19906057f8bf507f0e73ee02bb669d58c3069e7718b89ca4d314cf4fd6f1679019cc46d185c7af34f6c05a307b070e74e9ed5b9c64f86aacc2b90d10'],
@@ -24,10 +22,14 @@ const fixtures = [
   ['keccak-512', 'beep boop', '1d40e161c54798f78eba3404ac5e7e12d27555b7b810e7fd0db3f25ffa0c785c438331b0fbb6156215f69edf403c642e5280f4521da9bd767296ec81f05100852e78']
 ]
 
+/**
+ * @typedef {import("multiformats/hashes/hasher").MultihashHasher<number>} MultihashHasher
+ */
+
 describe('Digests', () => {
   for (const [name, input, expectedDigest] of fixtures) {
     it(name, async () => {
-      const hasher = sha3[name.replace('-', '')]
+      const hasher = /** @type {Record<string, MultihashHasher>} */(sha3)[name.replace('-', '')]
       const hash = await hasher.digest(bytes.fromString(input))
       assert.strictEqual(hash.code, hasher.code)
       assert.strictEqual(bytes.toHex(hash.bytes), expectedDigest)
@@ -38,15 +40,15 @@ describe('Digests', () => {
 describe('Hashers', () => {
   const beepboop = bytes.fromString('beep boop')
 
-  const codecs = table.split('\n')
+  const codecs = /** @type {[string,string,number][]} */(table.split('\n')
     .filter(Boolean)
-    .map((l) => l.split(',').map((e) => e.trim()).map((e) => e.startsWith('0x') ? parseInt(e, 16) : e))
+    .map((l) => l.split(',').map((e) => e.trim()).map((e) => e.startsWith('0x') ? parseInt(e, 16) : e)))
 
   for (const [name,, code] of codecs) {
     const exportName = name.replace('-', '')
 
     it(name, async () => {
-      const hasher = sha3[exportName]
+      const hasher = /** @type {Record<string, MultihashHasher>} */(sha3)[exportName]
       assert.strictEqual(hasher.code, code)
       const hash = await hasher.digest(beepboop)
       assert.strictEqual(hash.code, hasher.code)
