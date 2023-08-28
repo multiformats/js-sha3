@@ -1,6 +1,7 @@
-import * as Block from 'multiformats/block'
+/* eslint no-console: off */
 import * as codec from '@ipld/dag-cbor'
-import { sha3256 as hasher } from '@multiformats/sha3'
+import * as Block from 'multiformats/block'
+import { sha3256 as hasher } from './src/index.js' // would be: '@multiformats/sha3'
 
 async function run () {
   const value = { hello: 'world' }
