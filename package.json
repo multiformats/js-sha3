@@ -72,7 +72,7 @@
     "dep-check": "aegir dep-check"
   },
   "dependencies": {
-    "js-sha3": "^0.8.0",
+    "js-sha3": "^0.9.1",
     "multiformats": "^12.1.0"
   },
   "devDependencies": {
