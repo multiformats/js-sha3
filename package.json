@@ -33,7 +33,7 @@
     "import": "./index.js"
   },
   "dependencies": {
-    "js-sha3": "^0.8.0",
+    "js-sha3": "^0.9.1",
     "multiformats": "^9.5.4"
   },
   "devDependencies": {
