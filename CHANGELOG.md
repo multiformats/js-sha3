@@ -1,3 +1,28 @@
+## [3.0.0](https://github.com/multiformats/js-sha3/compare/v2.0.17...v3.0.0) (2023-08-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* publish as esm-only, use aegir, multiformats@12
+
+### Features
+
+* publish as esm-only, use aegir, multiformats@12 ([50d390b](https://github.com/multiformats/js-sha3/commit/50d390b6570e73664c8abfa31a04edc4952f3042))
+
+
+### Bug Fixes
+
+* add "release" section ([5a35634](https://github.com/multiformats/js-sha3/commit/5a35634fd51902f39fa57aa9c0e2c771fc744470))
+
+
+### Trivial Changes
+
+* **deps:** bump actions/setup-node from 3.6.0 to 3.8.0 ([bad8374](https://github.com/multiformats/js-sha3/commit/bad8374a92c5a9dfeace69ea9e4576cb6508a4ab))
+* **deps:** bump gozala/typescript-error-reporter-action ([#56](https://github.com/multiformats/js-sha3/issues/56)) ([a1feb6a](https://github.com/multiformats/js-sha3/commit/a1feb6ab5342dfdc4c9da1a4c63b26279d2d26b9))
+* **deps:** js-sha3@0.9.1 ([7383850](https://github.com/multiformats/js-sha3/commit/7383850132e86b0ca69a68a27956aae5e3ebd369))
+* multiformats@12.1 ([7914985](https://github.com/multiformats/js-sha3/commit/791498545c9721d878b62c3a5d92c368e96eec1f))
+* Update .github/dependabot.yml [skip ci] ([97d8e28](https://github.com/multiformats/js-sha3/commit/97d8e2830c0f07a2299ba9b9e44170ad4f77b27b))
+
 ## [2.0.17](https://github.com/multiformats/js-sha3/compare/v2.0.16...v2.0.17) (2023-05-16)
 
 
