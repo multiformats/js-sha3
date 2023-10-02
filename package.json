@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@ipld/dag-cbor": "^9.0.4",
-    "aegir": "^40.0.11"
+    "aegir": "^41.0.0"
   },
   "directories": {
     "test": "test"
