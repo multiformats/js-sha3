@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/multiformats/js-sha3/compare/v3.0.0...v3.0.1) (2023-10-03)
+
+
+### Dependencies
+
+* **dev:** bump aegir from 40.0.13 to 41.0.0 ([911f2a0](https://github.com/multiformats/js-sha3/commit/911f2a01c2512040ce9d28466c63383c31f8c605))
+
 ## [3.0.0](https://github.com/multiformats/js-sha3/compare/v2.0.17...v3.0.0) (2023-08-31)
 
 
