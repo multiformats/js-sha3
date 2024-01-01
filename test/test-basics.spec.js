@@ -23,7 +23,7 @@ const fixtures = [
 ]
 
 /**
- * @typedef {import("multiformats/hashes/hasher").MultihashHasher<number>} MultihashHasher
+ * @typedef {import("multiformats/hashes/interface").MultihashHasher<number>} MultihashHasher
  */
 
 describe('Digests', () => {
