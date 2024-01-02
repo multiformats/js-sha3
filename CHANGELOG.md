@@ -1,3 +1,15 @@
+## [3.0.2](https://github.com/multiformats/js-sha3/compare/v3.0.1...v3.0.2) (2024-01-02)
+
+
+### Dependencies
+
+* bump multiformats from 12.1.3 to 13.0.0 ([fd0e9c7](https://github.com/multiformats/js-sha3/commit/fd0e9c72cd404da500c3a80181e784f677dd74ef))
+
+
+### Tests
+
+* adjust multihashhasher interface for new multiformats ([80e7bc1](https://github.com/multiformats/js-sha3/commit/80e7bc139acee687cd4da1061d1a11be8cdebbfc))
+
 ## [3.0.1](https://github.com/multiformats/js-sha3/compare/v3.0.0...v3.0.1) (2023-10-03)
 
 
