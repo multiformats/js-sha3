@@ -166,10 +166,10 @@
   },
   "dependencies": {
     "js-sha3": "^0.9.1",
-    "multiformats": "^13.0.0"
+    "multiformats": "^14.0.0"
   },
   "devDependencies": {
-    "@ipld/dag-cbor": "^9.0.4",
+    "@ipld/dag-cbor": "^10.0.0",
     "aegir": "^48.0.4"
   }
 }

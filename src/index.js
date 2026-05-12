@@ -28,7 +28,7 @@ import { from } from 'multiformats/hashes/hasher'
 
 /**
  * @param {sha3.Hash} fn
- * @returns {(inp:Uint8Array)=>Uint8Array}
+ * @returns {(inp:Uint8Array)=>Uint8Array<ArrayBuffer>}
  */
 function encoder (fn) {
   return (/** @type {Uint8Array} */ b) => new Uint8Array(fn.array(b))
