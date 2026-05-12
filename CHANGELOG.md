@@ -1,3 +1,13 @@
+## [4.0.0](https://github.com/multiformats/js-sha3/compare/v3.0.3...v4.0.0) (2026-05-12)
+
+### ⚠ BREAKING CHANGES
+
+* the encoder now returns a `Uint8Array<ArrayBuffer>`
+
+### Dependencies
+
+* update to multiformats 14.x.x ([#85](https://github.com/multiformats/js-sha3/issues/85)) ([7e362c5](https://github.com/multiformats/js-sha3/commit/7e362c5219bd9ceb4a2bc60e51aeb2f45b910f4a))
+
 ## [3.0.3](https://github.com/multiformats/js-sha3/compare/v3.0.2...v3.0.3) (2026-05-12)
 
 ### Trivial Changes
