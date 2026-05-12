@@ -58,6 +58,10 @@ Loading this module through a script tag will make its exports available as `Mul
 <script src="https://unpkg.com/@multiformats/sha3/dist/index.min.js"></script>
 ```
 
+# API Docs
+
+- <https://multiformats.github.io/js-sha3>
+
 # License
 
 Licensed under either of
