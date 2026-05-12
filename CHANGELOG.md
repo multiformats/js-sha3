@@ -1,3 +1,14 @@
+## [3.0.3](https://github.com/multiformats/js-sha3/compare/v3.0.2...v3.0.3) (2026-05-12)
+
+### Trivial Changes
+
+* **deps:** update aegir to v47.0.26 ([#82](https://github.com/multiformats/js-sha3/issues/82)) ([5f03d42](https://github.com/multiformats/js-sha3/commit/5f03d42937ebce56b2bc41bae45710d78f74e454))
+* Update .github/dependabot.yml [skip ci] ([3745435](https://github.com/multiformats/js-sha3/commit/3745435d4631692b63f52e832592b4bb769f67b9))
+
+### Dependencies
+
+* **dev:** bump aegir from 41.3.5 to 48.0.4 ([#79](https://github.com/multiformats/js-sha3/issues/79)) ([72e4536](https://github.com/multiformats/js-sha3/commit/72e453665dc3bf89b8b7448564c3b5b2abf1c73a))
+
 ## [3.0.2](https://github.com/multiformats/js-sha3/compare/v3.0.1...v3.0.2) (2024-01-02)
 
 
