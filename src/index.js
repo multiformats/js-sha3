@@ -1,3 +1,28 @@
+/**
+ * @packageDocumentation
+ *
+ * The `@multiformats/sha3` package exports `sha3*`, `shake*` and `keccak*` `MultihashHasher`s. The Multicodecs [table](https://github.com/multiformats/multicodec/blob/master/table.csv) defines these multihashes.
+ *
+ * The following `MultihashHasher`s are exported:
+ *
+ * - `sha3224` - SHA3-224
+ * - `sha3256` - SHA3-256
+ * - `sha3384` - SHA3-384
+ * - `sha3512` - SHA3-512
+ * - `shake128` - SHAKE-128 (256 output bits)
+ * - `shake256` - SHAKE-256 (512 output bits)
+ * - `keccak224` - KECCAK-224
+ * - `keccak256` - KECCAK-256
+ * - `keccak384` - KECCAK-384
+ * - `keccak512` - KECCAK-512
+ *
+ * e.g. he `sha3-384`, multicodec code `0x15`, may be imported as:
+ *
+ * ```js
+ * import { sha3384 } from '@multiformats/sha3'
+ * ```
+ */
+
 import sha3 from 'js-sha3'
 import { from } from 'multiformats/hashes/hasher'
 
