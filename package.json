@@ -165,7 +165,7 @@
     "docs": "aegir docs"
   },
   "dependencies": {
-    "js-sha3": "^0.9.1",
+    "js-sha3": "^0.10.0",
     "multiformats": "^14.0.0"
   },
   "devDependencies": {
